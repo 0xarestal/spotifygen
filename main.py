@@ -61,3 +61,10 @@ while True:
 
 for thread in threads:
     thread.join()
+
+
+with open("acc.txt", "w") as file:
+    for thread in threads:
+        thread.join()
+        email, password = thread._args
+        file.write(f"{email}:{password}\n")
